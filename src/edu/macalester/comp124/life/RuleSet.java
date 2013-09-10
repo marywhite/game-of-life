@@ -17,9 +17,21 @@ public interface RuleSet {
     
     /**
      * Apply the rules described by this rule set.
+     *
      * @param value The current value of the cell.
      * @param neighborCount The number of living neighbors.
      * @return The value of the cell in the next generation.
      */
-    public boolean applyRules(boolean value, int neighborCount);
-}
+    public boolean applyRules(boolean value, int neighborCount) {
+        if (value)  {
+            if (neighborCount == 2) {
+                return true;
+            }
+        }
+
+        if (!value) {
+            if (neighborCount == 3) {
+                return true;
+            }
+        }
+    }

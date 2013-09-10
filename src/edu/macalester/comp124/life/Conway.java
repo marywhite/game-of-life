@@ -13,12 +13,12 @@ public class Conway implements RuleSet {
 
     /**
      * Applies the rules of Conway's Game of Life.
+     *
      * @param isAlive The value of the current cell (true = alive).
      * @param neighborCount The number of living neighbors of the cell.
      * @return true if the cell should be alive in the next generation.
      * 
      */
-    public boolean applyRules(boolean isAlive, int neighborCount) {
-        return false; // TODO: replace this with the correct rules
-    }
+    public void applyRules(boolean isAlive, int neighborCount) {
+    if isAlive()
 }
