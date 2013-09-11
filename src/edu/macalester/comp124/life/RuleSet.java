@@ -22,16 +22,18 @@ public interface RuleSet {
      * @param neighborCount The number of living neighbors.
      * @return The value of the cell in the next generation.
      */
-    public boolean applyRules(boolean value, int neighborCount) {
-        if (value)  {
-            if (neighborCount == 2) {
-                return true;
-            }
-        }
 
-        if (!value) {
-            if (neighborCount == 3) {
-                return true;
-            }
+    public boolean applyRules(boolean value, int neighborCount){
+        boolean isAlive;
+
+        if (value && neighborCount == 2)  {
+            isAlive =  true;
+        } else if (!value && neighborCount == 3) {
+            isAlive = true;
+        } else {
+            isAlive = false;
         }
+        return isAlive;
     }
+}
+
